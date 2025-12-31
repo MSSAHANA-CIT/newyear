@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - For My Everything</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="mainNav" class="main-nav">
+    <div class="nav-brand">For My Everything</div>
+    <div class="nav-links">
+      <a href="home.html" class="nav-btn active">Home</a>
+      <a href="memory-garden.html" class="nav-btn">Memory Garden</a>
+      <a href="bouquet.html" class="nav-btn">Bouquet</a>
+      <a href="book.html" class="nav-btn">Book of Us</a>
+      <a href="library.html" class="nav-btn">Library</a>
+      <a href="constellations.html" class="nav-btn">Constellations</a>
+      <a href="map.html" class="nav-btn">Map</a>
+      <a href="quest.html" class="nav-btn">Quest</a>
+      <a href="ai-letter.html" class="nav-btn">AI Letter</a>
+      <a href="vault.html" class="nav-btn">Vault</a>
+    </div>
+    <button id="nightModeToggle" class="night-toggle">🌙</button>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="section active">
+    <div class="home-content">
+      <h1 class="home-title">For My Everything</h1>
+      <h2 class="home-subtitle">My Light in the Life • My Sahana MT• My Wife</h2>
+      <p class="home-description">A collection of memories, love, and promises</p>
+      <p class="home-signature">- Your Husband (Monish Tijil)</p>
+      <div class="home-features">
+        <a href="memory-garden.html" class="feature-card">
+          <div class="feature-icon">🌸</div>
+          <h3>Memory Garden</h3>
+        </a>
+        <a href="bouquet.html" class="feature-card">
+          <div class="feature-icon">💐</div>
+          <h3>Digital Bouquet</h3>
+        </a>
+        <a href="book.html" class="feature-card">
+          <div class="feature-icon">📖</div>
+          <h3>Book of Us</h3>
+        </a>
+        <a href="library.html" class="feature-card">
+          <div class="feature-icon">📚</div>
+          <h3>Secret Library</h3>
+        </a>
+        <a href="constellations.html" class="feature-card">
+          <div class="feature-icon">⭐</div>
+          <h3>Constellations</h3>
+        </a>
+        <a href="vault.html" class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Time Capsule</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sparkles -->
+  <div id="sparkles"></div>
+
+  <!-- Dust Particles -->
+  <div id="dust"></div>
+
+  <script src="script.js"></script>
+  <script>
+    // Initialize home page specific features
+    document.addEventListener('DOMContentLoaded', () => {
+      createPetals();
+      createDust();
+      createSparkles();
+    });
+  </script>
+</body>
+</html>

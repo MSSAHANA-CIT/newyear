@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Time Capsule - For My Everything</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="mainNav" class="main-nav">
+    <div class="nav-brand">For My Everything</div>
+    <div class="nav-links">
+      <a href="home.html" class="nav-btn">Home</a>
+      <a href="memory-garden.html" class="nav-btn">Memory Garden</a>
+      <a href="bouquet.html" class="nav-btn">Bouquet</a>
+      <a href="book.html" class="nav-btn">Book of Us</a>
+      <a href="library.html" class="nav-btn">Library</a>
+      <a href="constellations.html" class="nav-btn">Constellations</a>
+      <a href="map.html" class="nav-btn">Map</a>
+      <a href="quest.html" class="nav-btn">Quest</a>
+      <a href="ai-letter.html" class="nav-btn">AI Letter</a>
+      <a href="vault.html" class="nav-btn active">Vault</a>
+    </div>
+    <button id="nightModeToggle" class="night-toggle">🌙</button>
+  </nav>
+
+  <!-- Time Capsule Vault Game -->
+  <section id="vault" class="section active">
+    <div class="vault-game-container">
+      <!-- Game Header -->
+      <div class="game-header">
+        <h1 class="game-title">🔐 The Vault Game</h1>
+        <p class="game-subtitle">Unlock the Secret Vaults of Love</p>
+      </div>
+
+      <!-- Game Rules -->
+      <div class="game-rules" id="gameRules">
+        <div class="rules-header">
+          <h2>📜 Game Rules</h2>
+          <button class="close-rules" id="closeRules">×</button>
+        </div>
+        <div class="rules-content">
+          <div class="rule-item">
+            <span class="rule-number">1</span>
+            <p>You have <strong>3 attempts</strong> per vault level</p>
+          </div>
+          <div class="rule-item">
+            <span class="rule-number">2</span>
+            <p>Each vault requires a <strong>special key</strong> to unlock</p>
+          </div>
+          <div class="rule-item">
+            <span class="rule-number">3</span>
+            <p>Use <strong>hints</strong> if you get stuck (costs 1 attempt)</p>
+          </div>
+          <div class="rule-item">
+            <span class="rule-number">4</span>
+            <p>Unlock all <strong>3 vaults</strong> to win the grand prize</p>
+          </div>
+          <div class="rule-item">
+            <span class="rule-number">5</span>
+            <p>Think about our <strong>special moments</strong> and <strong>nicknames</strong></p>
+          </div>
+        </div>
+        <button class="start-game-btn" id="startGame">Start Game</button>
+      </div>
+
+      <!-- Game Stats -->
+      <div class="game-stats hidden" id="gameStats">
+        <div class="stat-box">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-value" id="currentLevel">1</div>
+          <div class="stat-label">Current Level</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">💜</div>
+          <div class="stat-value" id="attemptsLeft">3</div>
+          <div class="stat-label">Attempts Left</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-value" id="vaultsUnlocked">0</div>
+          <div class="stat-label">Vaults Unlocked</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">💡</div>
+          <div class="stat-value" id="hintsUsed">0</div>
+          <div class="stat-label">Hints Used</div>
+        </div>
+      </div>
+
+      <!-- Vault Levels -->
+      <div class="vault-levels hidden" id="vaultLevels">
+        <!-- Level 1: Bronze Vault -->
+        <div class="vault-level" id="level1">
+          <div class="level-header">
+            <div class="level-badge bronze">🥉</div>
+            <h2 class="level-title">Bronze Vault</h2>
+            <p class="level-description">The First Challenge</p>
+          </div>
+          <div class="vault-door game-vault-door" id="vaultDoor1">
+            <div class="vault-lock">
+              <div class="lock-icon">🔒</div>
+              <h3>Vault Level 1</h3>
+              <p class="vault-hint-text">Hint: What do I call you? (Think of our special names)</p>
+              <div class="lock-input">
+                <input type="text" id="vaultKey1" placeholder="Enter the key..." autocomplete="off">
+                <div class="input-actions">
+                  <button id="unlockVault1" class="vault-btn unlock-btn">Unlock</button>
+                  <button id="hintBtn1" class="vault-btn hint-btn">💡 Hint</button>
+                </div>
+              </div>
+              <div class="attempts-display">
+                <span>Attempts: <span id="attempts1">3</span>/3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 2: Silver Vault -->
+        <div class="vault-level hidden" id="level2">
+          <div class="level-header">
+            <div class="level-badge silver">🥈</div>
+            <h2 class="level-title">Silver Vault</h2>
+            <p class="level-description">The Second Challenge</p>
+          </div>
+          <div class="vault-door game-vault-door" id="vaultDoor2">
+            <div class="vault-lock">
+              <div class="lock-icon">🔒</div>
+              <h3>Vault Level 2</h3>
+              <p class="vault-hint-text">Hint: What's my nickname? (The one you use for me)</p>
+              <div class="lock-input">
+                <input type="text" id="vaultKey2" placeholder="Enter the key..." autocomplete="off">
+                <div class="input-actions">
+                  <button id="unlockVault2" class="vault-btn unlock-btn">Unlock</button>
+                  <button id="hintBtn2" class="vault-btn hint-btn">💡 Hint</button>
+                </div>
+              </div>
+              <div class="attempts-display">
+                <span>Attempts: <span id="attempts2">3</span>/3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 3: Gold Vault -->
+        <div class="vault-level hidden" id="level3">
+          <div class="level-header">
+            <div class="level-badge gold">🥇</div>
+            <h2 class="level-title">Gold Vault</h2>
+            <p class="level-description">The Final Challenge</p>
+          </div>
+          <div class="vault-door game-vault-door" id="vaultDoor3">
+            <div class="vault-lock">
+              <div class="lock-icon">🔒</div>
+              <h3>Vault Level 3</h3>
+              <p class="vault-hint-text">Hint: What do we call our relationship? (One word)</p>
+              <div class="lock-input">
+                <input type="text" id="vaultKey3" placeholder="Enter the key..." autocomplete="off">
+                <div class="input-actions">
+                  <button id="unlockVault3" class="vault-btn unlock-btn">Unlock</button>
+                  <button id="hintBtn3" class="vault-btn hint-btn">💡 Hint</button>
+                </div>
+              </div>
+              <div class="attempts-display">
+                <span>Attempts: <span id="attempts3">3</span>/3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success Messages -->
+      <div class="success-message hidden" id="successMessage">
+        <div class="success-icon">🎉</div>
+        <h2 class="success-title">Vault Unlocked!</h2>
+        <p class="success-text" id="successText"></p>
+        <button class="vault-btn next-level-btn" id="nextLevelBtn">Continue</button>
+      </div>
+
+      <!-- Final Reward -->
+      <div class="vault-content hidden" id="vaultContent">
+        <div class="victory-celebration">
+          <div class="victory-icon">🏆</div>
+          <h2 class="victory-title">Congratulations!</h2>
+          <p class="victory-subtitle">You've unlocked all vaults!</p>
+        </div>
+        
+        <div class="vault-items">
+          <div class="vault-item">
+            <div class="item-icon">💌</div>
+            <h3>My Eternal Letter</h3>
+            <div class="item-content">
+              <p>My Dearest Sahana,</p>
+              <p>You've proven your dedication by unlocking all three vaults. Just like you've unlocked these treasures, you've unlocked my heart completely and forever.</p>
+              <p>This game was a test of our connection, our memories, our love. And you passed with flying colors.</p>
+              <p>I promise to love you in every lifetime, in every universe, in every moment that exists. You are my everything, my light, my forever.</p>
+              <p class="signature">Forever yours,<br>MO (Monish Tijil) 💜</p>
+            </div>
+          </div>
+          
+          <div class="vault-item">
+            <div class="item-icon">📋</div>
+            <h3>My Promises to You</h3>
+            <ul>
+              <li>To love you every single day, without fail</li>
+              <li>To support your dreams and be your biggest cheerleader</li>
+              <li>To be your safe place, your home, your sanctuary</li>
+              <li>To grow old with you and cherish every moment</li>
+              <li>To choose you, every day, for the rest of my life</li>
+              <li>To make you laugh, to hold you when you cry</li>
+              <li>To be the husband you deserve</li>
+            </ul>
+          </div>
+          
+          <div class="vault-item">
+            <div class="item-icon">🔮</div>
+            <h3>Our Future Together</h3>
+            <ul>
+              <li>Countless adventures and travels</li>
+              <li>Building our dream home together</li>
+              <li>Creating memories that last forever</li>
+              <li>Growing old together, hand in hand</li>
+              <li>Facing life's challenges as a team</li>
+              <li>Celebrating every victory together</li>
+              <li>Forever and always, my love</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="game-summary">
+          <h3>Game Summary</h3>
+          <div class="summary-stats">
+            <div class="summary-item">
+              <span>Total Attempts:</span>
+              <span id="totalAttempts">0</span>
+            </div>
+            <div class="summary-item">
+              <span>Hints Used:</span>
+              <span id="totalHints">0</span>
+            </div>
+            <div class="summary-item">
+              <span>Completion Time:</span>
+              <span id="completionTime">0</span> seconds
+            </div>
+          </div>
+        </div>
+        
+        <button id="playAgain" class="vault-btn play-again-btn">Play Again</button>
+      </div>
+
+      <!-- Failure Message -->
+      <div class="failure-message hidden" id="failureMessage">
+        <div class="failure-icon">😔</div>
+        <h2 class="failure-title">Out of Attempts!</h2>
+        <p class="failure-text">Don't worry, you can try again!</p>
+        <button class="vault-btn retry-btn" id="retryBtn">Try Again</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sparkles -->
+  <div id="sparkles"></div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeVault();
+      setVaultDate();
+      createSparkles();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Everything - Sahana</title>
+  <meta http-equiv="refresh" content="0; url=home.html">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <script>
+    window.location.href = 'home.html';
+  </script>
+  <!-- Navigation -->
+  <nav id="mainNav" class="main-nav">
+    <div class="nav-brand">For My Everything</div>
+    <div class="nav-links">
+      <button class="nav-btn" data-section="home">Home</button>
+      <button class="nav-btn" data-section="memory-garden">Memory Garden</button>
+      <button class="nav-btn" data-section="bouquet">Bouquet</button>
+      <button class="nav-btn" data-section="book">Book of Us</button>
+      <button class="nav-btn" data-section="library">Library</button>
+      <button class="nav-btn" data-section="constellations">Constellations</button>
+      <button class="nav-btn" data-section="map">Map</button>
+      <button class="nav-btn" data-section="quest">Quest</button>
+      <button class="nav-btn" data-section="ai-letter">AI Letter</button>
+      <button class="nav-btn" data-section="vault">Vault</button>
+    </div>
+    <button id="nightModeToggle" class="night-toggle">🌙</button>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="section active">
+    <div class="home-content">
+      <h1 class="home-title">For My Everything</h1>
+      <h2 class="home-subtitle">My Light in the Life • My Sahana MT• My Wife</h2>
+      <p class="home-description">A collection of memories, love, and promises</p>
+      <p class="home-signature">- Your Husband (Monish Tijil)</p>
+      <div class="home-features">
+        <div class="feature-card" data-section="memory-garden">
+          <div class="feature-icon">🌸</div>
+          <h3>Memory Garden</h3>
+        </div>
+        <div class="feature-card" data-section="bouquet">
+          <div class="feature-icon">💐</div>
+          <h3>Digital Bouquet</h3>
+        </div>
+        <div class="feature-card" data-section="book">
+          <div class="feature-icon">📖</div>
+          <h3>Book of Us</h3>
+        </div>
+        <div class="feature-card" data-section="library">
+          <div class="feature-icon">📚</div>
+          <h3>Secret Library</h3>
+        </div>
+        <div class="feature-card" data-section="constellations">
+          <div class="feature-icon">⭐</div>
+          <h3>Constellations</h3>
+        </div>
+        <div class="feature-card" data-section="vault">
+          <div class="feature-icon">🔒</div>
+          <h3>Time Capsule</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Purple Memory Garden -->
+  <section id="memory-garden" class="section">
+    <div class="garden-container">
+      <div class="memory-card" data-card="1">
+        <h2>The Beginning</h2>
+        <p>Every story has a beginning, but ours feels like it was written in the stars long before we met.</p>
+      </div>
+      <div class="memory-card" data-card="2">
+        <h2>Your Smile</h2>
+        <p>Your smile is the light that guides me through every dark moment. It's my favorite thing in this world.</p>
+      </div>
+      <div class="memory-card" data-card="3">
+        <h2>Your Patience</h2>
+        <p>Your patience with me, your understanding, your calm presence - these are gifts I treasure every day.</p>
+      </div>
+      <div class="memory-card" data-card="4">
+        <h2>Your Strength</h2>
+        <p>You are stronger than you know, more beautiful than you see, and more loved than you can imagine.</p>
+      </div>
+      <div class="memory-card" data-card="5">
+        <h2>Our Future</h2>
+        <p>I see our future together - full of laughter, love, and endless moments of joy. I can't wait to build it with you.</p>
+      </div>
+      <div class="memory-card surprise-card" data-card="surprise">
+        <h2>Open Your Surprise</h2>
+        <button id="surpriseBtn" class="surprise-button">Bloom</button>
+        <div id="surpriseLetter" class="surprise-letter hidden">
+          <p class="typewriter-text"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Digital Bouquet Generator -->
+  <section id="bouquet" class="section">
+    <div class="bouquet-container">
+      <h2 class="section-title">Your Digital Bouquet</h2>
+      <button id="generateBouquet" class="generate-btn">Generate Bouquet</button>
+      <button id="saveBouquet" class="save-btn hidden">Save Bouquet</button>
+      <div id="bouquetCanvas" class="bouquet-canvas"></div>
+      <canvas id="bouquetImageCanvas" class="hidden"></canvas>
+    </div>
+  </section>
+
+  <!-- Book of Us -->
+  <section id="book" class="section">
+    <div class="book-container">
+      <div class="book-cover" id="bookCover">
+        <div class="cover-content">
+          <h1 class="book-title">The Book of Us</h1>
+          <h2 class="book-subtitle">For My Everything</h2>
+          <p class="book-press">Press to Open</p>
+        </div>
+      </div>
+      <div class="book-pages hidden" id="bookPages">
+        <div class="page left-page" data-page="1">
+          <div class="page-content">
+            <h2>Chapter 1: How We Met</h2>
+            <p>Some moments change everything. Meeting you was one of those moments. It felt like finding a piece of myself I didn't know was missing.</p>
+            <div class="margin-note">"The best day of my life"</div>
+          </div>
+        </div>
+        <div class="page right-page" data-page="2">
+          <div class="page-content">
+            <h2>Chapter 2: What I Admire</h2>
+            <p>I admire your strength, your kindness, your intelligence, and the way you see beauty in everything. You make the world a better place just by being in it.</p>
+            <div class="margin-note">"You are my inspiration"</div>
+          </div>
+        </div>
+        <div class="page left-page" data-page="3">
+          <div class="page-content">
+            <h2>Chapter 3: Favorite Moments</h2>
+            <p>Every moment with you is a favorite moment. The quiet mornings, the shared laughter, the way you look at me - these are the memories I hold closest to my heart.</p>
+            <div class="margin-note">"Time stops when I'm with you"</div>
+          </div>
+        </div>
+        <div class="page right-page" data-page="4">
+          <div class="page-content">
+            <h2>Chapter 4: Our Future</h2>
+            <p>I see endless possibilities with you. Adventures waiting to be had, dreams to chase together, and a lifetime of love to build. This is just the beginning.</p>
+            <div class="margin-note">"Forever and always"</div>
+          </div>
+        </div>
+      </div>
+      <div class="bookmark"></div>
+      <button id="soundToggle" class="sound-toggle">🔊 Sound</button>
+    </div>
+  </section>
+
+  <!-- Secret Library Portal -->
+  <section id="library" class="section">
+    <div class="library-container">
+      <h1 class="library-title">The Secret Library</h1>
+      <p class="library-subtitle">For My Everything, My Sahana</p>
+      <div class="library-shelves">
+        <div class="shelf-row">
+          <div class="library-book" data-book="1">
+            <span>Chapter 1: The Day I Realized...</span>
+          </div>
+          <div class="library-book" data-book="2">
+            <span>Chapter 2: Your Smile</span>
+          </div>
+          <div class="library-book" data-book="3">
+            <span>Chapter 3: Quiet Moments</span>
+          </div>
+        </div>
+        <div class="shelf-row">
+          <div class="library-book" data-book="4">
+            <span>Chapter 4: Distance & Love</span>
+          </div>
+          <div class="library-book special-book" data-book="gift">
+            <span>🔒 The Forbidden Book</span>
+          </div>
+          <div class="library-book" data-book="5">
+            <span>Chapter 5: Forever</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="libraryModal" class="library-modal hidden">
+      <div class="library-modal-content">
+        <button class="close-modal">×</button>
+        <div id="libraryModalText"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flower Constellations -->
+  <section id="constellations" class="section">
+    <canvas id="starCanvas"></canvas>
+    <div class="constellation-ui">
+      <h2 class="constellation-title">Your Purple Universe</h2>
+      <button id="wishBtn" class="wish-button">Make a Wish</button>
+      <div id="wishInput" class="wish-input hidden">
+        <input type="text" id="wishText" placeholder="Type your wish...">
+        <button id="submitWish">Submit</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Long Distance Map -->
+  <section id="map" class="section">
+    <div class="map-container">
+      <h2 class="section-title">Long Distance Map</h2>
+      <div class="map-info">
+        <div class="city-info">
+          <div class="city-marker your-city">
+            <h3>Your City</h3>
+            <p id="yourCityName">Your Location</p>
+          </div>
+          <div class="distance-info">
+            <p class="distance-text">Miles Apart, Still Together</p>
+            <p class="distance-number" id="distanceDisplay">∞</p>
+            <button id="sendHug" class="hug-button">Send a Hug 💜</button>
+          </div>
+          <div class="city-marker my-city">
+            <h3>My City</h3>
+            <p id="myCityName">My Location</p>
+          </div>
+        </div>
+      </div>
+      <svg id="mapSvg" class="map-svg" viewBox="0 0 800 400">
+        <path id="connectionArc" class="connection-arc" d="M 100 200 Q 400 50 700 200" fill="none" stroke="url(#purpleGradient)" stroke-width="3"/>
+        <defs>
+          <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#ba82ff;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#ffb4ff;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <circle id="yourCityDot" class="city-dot" cx="100" cy="200" r="15"/>
+        <circle id="myCityDot" class="city-dot" cx="700" cy="200" r="15"/>
+        <circle id="plane" class="plane" cx="100" cy="200" r="8"/>
+      </svg>
+      <div id="cityMemories" class="city-memories hidden">
+        <div class="memory-popup">
+          <button class="close-memory">×</button>
+          <div id="memoryContent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Purple Rose Quest -->
+  <section id="quest" class="section">
+    <div class="quest-container">
+      <h2 class="section-title">The Purple Rose: Hidden Quest</h2>
+      <div id="questStage" class="quest-stage">
+        <div class="quest-intro">
+          <p>Solve the puzzles to unlock your surprise...</p>
+          <button id="startQuest" class="quest-btn">Begin Quest</button>
+        </div>
+        <div class="quest-puzzle hidden" id="puzzle1">
+          <h3>Puzzle 1: Petal Order</h3>
+          <p>Click the petals in the correct order</p>
+          <div class="petal-puzzle">
+            <div class="quest-petal" data-order="1">🌸</div>
+            <div class="quest-petal" data-order="2">🌺</div>
+            <div class="quest-petal" data-order="3">🌷</div>
+            <div class="quest-petal" data-order="4">🌹</div>
+            <div class="quest-petal" data-order="5">🌻</div>
+          </div>
+          <p class="quest-hint">Hint: Think of our journey together</p>
+        </div>
+        <div class="quest-puzzle hidden" id="puzzle2">
+          <h3>Puzzle 2: Book Cipher</h3>
+          <p>Decode the message: "3-1-2, 2-1-3, 1-2-1"</p>
+          <div class="cipher-words">
+            <div class="cipher-word" data-word="1">Love</div>
+            <div class="cipher-word" data-word="2">You</div>
+            <div class="cipher-word" data-word="3">Forever</div>
+          </div>
+          <input type="text" id="cipherAnswer" placeholder="Your answer...">
+          <button id="checkCipher" class="quest-btn">Check</button>
+        </div>
+        <div class="quest-puzzle hidden" id="puzzle3">
+          <h3>Puzzle 3: Find the Hidden Objects</h3>
+          <div class="library-scene">
+            <div class="hidden-object" data-object="book">📖</div>
+            <div class="hidden-object" data-object="rose">🌹</div>
+            <div class="hidden-object" data-object="heart">💜</div>
+            <div class="hidden-object" data-object="key">🔑</div>
+          </div>
+          <p class="quest-progress">Found: <span id="objectsFound">0</span>/4</p>
+        </div>
+        <div class="quest-complete hidden" id="questComplete">
+          <h2>Quest Complete! 🎉</h2>
+          <div id="finalGift" class="final-gift">
+            <div class="gift-box">
+              <div class="gift-lid"></div>
+              <div class="gift-content">
+                <p class="gift-message">You've unlocked my heart forever, My Everything</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Love Letter -->
+  <section id="ai-letter" class="section">
+    <div class="ai-container">
+      <div class="ai-terminal">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="btn red"></span>
+            <span class="btn yellow"></span>
+            <span class="btn green"></span>
+          </div>
+          <span class="terminal-title">Love AI Assistant</span>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <div class="terminal-line">
+            <span class="prompt">AI></span>
+            <span class="text">Hello, My Everything. This is MO (Monish Tijil). How can I help you today?</span>
+          </div>
+        </div>
+        <div class="terminal-input-area">
+          <span class="prompt">You></span>
+          <input type="text" id="aiInput" placeholder="Ask me anything... (e.g., 'why do you love me?')" autocomplete="off">
+          <button id="generateCompliment" class="ai-btn">Generate Compliment</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Time Capsule Vault -->
+  <section id="vault" class="section">
+    <div class="vault-container">
+      <div class="vault-door" id="vaultDoor">
+        <div class="vault-lock">
+          <h2>Time Capsule</h2>
+          <p>Open on: <span id="vaultDate"></span></p>
+          <div class="lock-input">
+            <input type="text" id="vaultKey" placeholder="Enter your nickname...">
+            <button id="unlockVault" class="vault-btn">Unlock</button>
+          </div>
+        </div>
+      </div>
+      <div class="vault-content hidden" id="vaultContent">
+        <h2>Welcome, My Everything</h2>
+        <div class="vault-items">
+          <div class="vault-item">
+            <h3>💌 Letter</h3>
+            <p>My dearest Sahana, this is a promise of forever...</p>
+          </div>
+          <div class="vault-item">
+            <h3>📋 Promise List</h3>
+            <ul>
+              <li>To love you every single day</li>
+              <li>To support your dreams</li>
+              <li>To be your safe place</li>
+              <li>To grow old with you</li>
+            </ul>
+          </div>
+          <div class="vault-item">
+            <h3>🔮 Future Plans</h3>
+            <ul>
+              <li>Adventures together</li>
+              <li>Building our home</li>
+              <li>Creating memories</li>
+              <li>Forever and always</li>
+            </ul>
+          </div>
+        </div>
+        <button id="sealVault" class="vault-btn">Seal Again</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sparkles -->
+  <div id="sparkles"></div>
+
+  <!-- Dust Particles -->
+  <div id="dust"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

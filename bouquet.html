@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Bouquet - For My Everything</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="mainNav" class="main-nav">
+    <div class="nav-brand">For My Everything</div>
+    <div class="nav-links">
+      <a href="home.html" class="nav-btn">Home</a>
+      <a href="memory-garden.html" class="nav-btn">Memory Garden</a>
+      <a href="bouquet.html" class="nav-btn active">Bouquet</a>
+      <a href="book.html" class="nav-btn">Book of Us</a>
+      <a href="library.html" class="nav-btn">Library</a>
+      <a href="constellations.html" class="nav-btn">Constellations</a>
+      <a href="map.html" class="nav-btn">Map</a>
+      <a href="quest.html" class="nav-btn">Quest</a>
+      <a href="ai-letter.html" class="nav-btn">AI Letter</a>
+      <a href="vault.html" class="nav-btn">Vault</a>
+    </div>
+    <button id="nightModeToggle" class="night-toggle">🌙</button>
+  </nav>
+
+  <!-- Digital Bouquet Generator -->
+  <section id="bouquet" class="section active">
+    <div class="bouquet-container">
+      <h2 class="section-title">Your Digital Bouquet</h2>
+      <p class="bouquet-subtitle">A garden of love, blooming just for you</p>
+      <button id="generateBouquet" class="generate-btn">Generate Bouquet</button>
+      <button id="saveBouquet" class="save-btn hidden">Save Bouquet</button>
+      <div id="bouquetCanvas" class="bouquet-canvas"></div>
+      <canvas id="bouquetImageCanvas" class="hidden"></canvas>
+      
+      <!-- Floating Whispers -->
+      <div id="floatingWhispers"></div>
+    </div>
+  </section>
+
+  <!-- Sparkles -->
+  <div id="sparkles"></div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeBouquet();
+      createSparkles();
+    });
+  </script>
+</body>
+</html>

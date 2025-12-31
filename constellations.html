@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Constellations - For My Everything</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="mainNav" class="main-nav">
+    <div class="nav-brand">For My Everything</div>
+    <div class="nav-links">
+      <a href="home.html" class="nav-btn">Home</a>
+      <a href="memory-garden.html" class="nav-btn">Memory Garden</a>
+      <a href="bouquet.html" class="nav-btn">Bouquet</a>
+      <a href="book.html" class="nav-btn">Book of Us</a>
+      <a href="library.html" class="nav-btn">Library</a>
+      <a href="constellations.html" class="nav-btn active">Constellations</a>
+      <a href="map.html" class="nav-btn">Map</a>
+      <a href="quest.html" class="nav-btn">Quest</a>
+      <a href="ai-letter.html" class="nav-btn">AI Letter</a>
+      <a href="vault.html" class="nav-btn">Vault</a>
+    </div>
+    <button id="nightModeToggle" class="night-toggle">🌙</button>
+  </nav>
+
+  <!-- Flower Constellations -->
+  <section id="constellations" class="section active">
+    <canvas id="starCanvas"></canvas>
+    
+    <!-- Nebula Effects -->
+    <div id="nebula"></div>
+    
+    <!-- Shooting Stars -->
+    <div id="shootingStars"></div>
+    
+    <!-- Constellation UI -->
+    <div class="constellation-ui">
+      <h2 class="constellation-title">Your Purple Universe</h2>
+      <p class="constellation-subtitle">Where every star tells our story</p>
+      
+      <div class="constellation-controls">
+        <button id="wishBtn" class="wish-button">
+          <span class="button-icon">✨</span>
+          <span>Make a Wish</span>
+        </button>
+        <button id="connectBtn" class="connect-button">
+          <span class="button-icon">🔗</span>
+          <span>Connect Stars</span>
+        </button>
+        <button id="resetBtn" class="reset-button">
+          <span class="button-icon">🔄</span>
+          <span>Reset</span>
+        </button>
+      </div>
+      
+      <div id="wishInput" class="wish-input hidden">
+        <input type="text" id="wishText" placeholder="Type your wish and watch it become a star...">
+        <button id="submitWish" class="submit-wish-btn">Submit</button>
+      </div>
+      
+      <!-- Constellation Info -->
+      <div class="constellation-info">
+        <div class="info-card">
+          <h3>Special Constellations</h3>
+          <p>Click on constellations to reveal messages</p>
+          <p class="hint">✨ Look for the flower pattern in the center</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Constellation Messages -->
+    <div id="constellationMessage" class="constellation-message hidden">
+      <div class="message-content">
+        <button class="close-message">×</button>
+        <h3 class="message-title"></h3>
+        <p class="message-text"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sparkles -->
+  <div id="sparkles"></div>
+  
+  <!-- Particle Effects -->
+  <div id="particles"></div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeConstellations();
+      setTimeout(() => initConstellationCanvas(), 100);
+      createSparkles();
+      createNebula();
+      createShootingStars();
+      createParticles();
+      currentSection = 'constellations';
+    });
+  </script>
+</body>
+</html>

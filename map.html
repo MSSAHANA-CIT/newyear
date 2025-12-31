@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Long Distance Map - For My Everything</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="mainNav" class="main-nav">
+    <div class="nav-brand">For My Everything</div>
+    <div class="nav-links">
+      <a href="home.html" class="nav-btn">Home</a>
+      <a href="memory-garden.html" class="nav-btn">Memory Garden</a>
+      <a href="bouquet.html" class="nav-btn">Bouquet</a>
+      <a href="book.html" class="nav-btn">Book of Us</a>
+      <a href="library.html" class="nav-btn">Library</a>
+      <a href="constellations.html" class="nav-btn">Constellations</a>
+      <a href="map.html" class="nav-btn active">Map</a>
+      <a href="quest.html" class="nav-btn">Quest</a>
+      <a href="ai-letter.html" class="nav-btn">AI Letter</a>
+      <a href="vault.html" class="nav-btn">Vault</a>
+    </div>
+    <button id="nightModeToggle" class="night-toggle">🌙</button>
+  </nav>
+
+  <!-- Long Distance Map -->
+  <section id="map" class="section active">
+    <div class="map-container">
+      <h2 class="section-title map-title">Across Oceans, One Heart</h2>
+      <p class="map-subtitle">From USA to India • Connected by Love</p>
+      
+      <div class="map-info">
+        <div class="country-info">
+          <div class="country-marker usa-marker">
+            <div class="country-flag">🇺🇸</div>
+            <h3>United States</h3>
+            <p id="usaLocation">Where I Am</p>
+            <div class="location-pin usa-pin"></div>
+          </div>
+          <div class="distance-info">
+            <p class="distance-text">Distance Between Us</p>
+            <p class="distance-number" id="distanceDisplay">8,000+</p>
+            <p class="distance-unit">miles</p>
+            <p class="love-quote">"No distance is too far when two hearts are one"</p>
+            <button id="sendHug" class="hug-button">Send Love Across the Ocean 💜</button>
+          </div>
+          <div class="country-marker india-marker">
+            <div class="country-flag">🇮🇳</div>
+            <h3>India</h3>
+            <p id="indiaLocation">Where You Are</p>
+            <div class="location-pin india-pin"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="world-map-container">
+        <svg id="mapSvg" class="map-svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#ba82ff;stop-opacity:1" />
+              <stop offset="50%" style="stop-color:#ff6bff;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#ffb4ff;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="usaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:rgba(186, 130, 255, 0.4);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:rgba(90, 43, 130, 0.6);stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="indiaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:rgba(255, 180, 255, 0.4);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:rgba(186, 130, 255, 0.6);stop-opacity:1" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <filter id="softGlow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          
+          <!-- USA Map Outline (Simplified but recognizable shape) -->
+          <g id="usaMap" class="country-map usa-map">
+            <path id="usaPath" class="country-path" 
+                  d="M 120 80 L 180 70 L 240 75 L 300 72 L 360 78 L 420 75 L 480 85 L 520 90 L 540 100 L 530 130 L 520 160 L 510 190 L 500 220 L 490 250 L 480 280 L 470 310 L 460 340 L 450 370 L 440 400 L 430 420 L 410 430 L 380 440 L 350 445 L 320 450 L 290 455 L 260 460 L 230 465 L 200 470 L 170 475 L 140 480 L 120 470 L 110 450 L 100 430 L 90 410 L 80 390 L 70 370 L 60 350 L 50 330 L 45 310 L 40 290 L 35 270 L 30 250 L 25 230 L 20 210 L 15 190 L 10 170 L 8 150 L 10 130 L 15 110 L 20 95 L 30 85 L 50 80 Z" 
+                  fill="url(#usaGradient)" 
+                  stroke="#ba82ff" 
+                  stroke-width="2.5" 
+                  filter="url(#softGlow)"/>
+            <!-- USA Label -->
+            <text x="300" y="280" text-anchor="middle" font-family="Playfair Display, serif" font-size="24" fill="#ba82ff" opacity="0.8" font-weight="bold">USA</text>
+          </g>
+          
+          <!-- India Map Outline (Simplified but recognizable triangular shape) -->
+          <g id="indiaMap" class="country-map india-map">
+            <path id="indiaPath" class="country-path" 
+                  d="M 800 120 L 850 115 L 900 120 L 950 125 L 1000 130 L 1050 135 L 1100 140 L 1120 160 L 1115 190 L 1110 220 L 1105 250 L 1100 280 L 1095 310 L 1090 340 L 1085 370 L 1080 400 L 1075 430 L 1070 460 L 1065 490 L 1060 520 L 1055 540 L 1045 550 L 1025 545 L 1000 540 L 975 535 L 950 530 L 925 525 L 900 520 L 875 515 L 850 510 L 825 505 L 800 500 L 790 480 L 780 460 L 770 440 L 760 420 L 750 400 L 740 380 L 730 360 L 720 340 L 710 320 L 700 300 L 690 280 L 680 260 L 670 240 L 660 220 L 750 170 Z" 
+                  fill="url(#indiaGradient)" 
+                  stroke="#ffb4ff" 
+                  stroke-width="2.5" 
+                  filter="url(#softGlow)"/>
+            <!-- India Label -->
+            <text x="900" y="350" text-anchor="middle" font-family="Playfair Display, serif" font-size="24" fill="#ffb4ff" opacity="0.8" font-weight="bold">India</text>
+          </g>
+          
+          <!-- Connection Arc (Curved line from USA to India) -->
+          <path id="connectionArc" class="connection-arc" 
+                d="M 300 250 Q 600 100 900 250" 
+                fill="none" 
+                stroke="url(#purpleGradient)" 
+                stroke-width="4"
+                filter="url(#glow)"/>
+          
+          <!-- Animated particles along the connection -->
+          <g id="connectionParticles"></g>
+          
+          <!-- Location markers -->
+          <g id="usaMarker" class="location-marker">
+            <circle id="usaDot" class="country-dot usa-dot" cx="300" cy="250" r="12"/>
+            <circle class="pulse-ring" cx="300" cy="250" r="12"/>
+            <circle class="pulse-ring-delayed" cx="300" cy="250" r="12"/>
+          </g>
+          
+          <g id="indiaMarker" class="location-marker">
+            <circle id="indiaDot" class="country-dot india-dot" cx="900" cy="250" r="12"/>
+            <circle class="pulse-ring" cx="900" cy="250" r="12"/>
+            <circle class="pulse-ring-delayed" cx="900" cy="250" r="12"/>
+          </g>
+          
+          <!-- Animated plane/heart icon -->
+          <g id="planeGroup" class="plane-group">
+            <circle id="plane" class="plane" cx="300" cy="250" r="10"/>
+            <text id="planeIcon" class="plane-icon" x="300" y="255" text-anchor="middle" font-size="16">✈️</text>
+          </g>
+          
+          <!-- Floating hearts -->
+          <g id="floatingHearts"></g>
+        </svg>
+      </div>
+      
+      <div class="map-stats">
+        <div class="stat-card">
+          <div class="stat-icon">🌍</div>
+          <div class="stat-value">2</div>
+          <div class="stat-label">Continents</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⏰</div>
+          <div class="stat-value">~10.5</div>
+          <div class="stat-label">Hours Time Difference</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💝</div>
+          <div class="stat-value">∞</div>
+          <div class="stat-label">Love</div>
+        </div>
+      </div>
+      
+      <div id="cityMemories" class="city-memories hidden">
+        <div class="memory-popup">
+          <button class="close-memory">×</button>
+          <div id="memoryContent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sparkles -->
+  <div id="sparkles"></div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeMap();
+      setTimeout(() => animatePlane(), 100);
+      createSparkles();
+      currentSection = 'map';
+    });
+  </script>
+</body>
+</html>

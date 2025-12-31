@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purple Rose Quest - For My Everything</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="mainNav" class="main-nav">
+    <div class="nav-brand">For My Everything</div>
+    <div class="nav-links">
+      <a href="home.html" class="nav-btn">Home</a>
+      <a href="memory-garden.html" class="nav-btn">Memory Garden</a>
+      <a href="bouquet.html" class="nav-btn">Bouquet</a>
+      <a href="book.html" class="nav-btn">Book of Us</a>
+      <a href="library.html" class="nav-btn">Library</a>
+      <a href="constellations.html" class="nav-btn">Constellations</a>
+      <a href="map.html" class="nav-btn">Map</a>
+      <a href="quest.html" class="nav-btn active">Quest</a>
+      <a href="ai-letter.html" class="nav-btn">AI Letter</a>
+      <a href="vault.html" class="nav-btn">Vault</a>
+    </div>
+    <button id="nightModeToggle" class="night-toggle">🌙</button>
+  </nav>
+
+  <!-- Purple Rose Quest -->
+  <section id="quest" class="section active">
+    <div class="quest-container">
+      <h2 class="section-title quest-main-title">The Purple Rose Quest</h2>
+      <p class="quest-subtitle">A Journey Through Our Love Story</p>
+      
+      <!-- Progress Bar -->
+      <div class="quest-progress-container">
+        <div class="quest-progress-bar">
+          <div id="questProgress" class="quest-progress-fill"></div>
+        </div>
+        <p class="quest-progress-text"><span id="currentPuzzle">0</span> / <span id="totalPuzzles">6</span> Puzzles Completed</p>
+      </div>
+      
+      <div id="questStage" class="quest-stage">
+        <div class="quest-intro">
+          <div class="quest-story">
+            <div class="story-icon">🌹</div>
+            <h3 class="story-title">The Legend of the Purple Rose</h3>
+            <div class="story-content">
+              <p>In a garden of memories, where love stories bloom, there lies a hidden treasure...</p>
+              <p>A <span class="highlight">Purple Rose</span> that holds the key to an eternal promise.</p>
+              <p>To unlock this treasure, you must journey through <span class="highlight">six challenges</span>, each one a testament to our bond.</p>
+              <p>Are you ready to embark on this quest, my love?</p>
+            </div>
+            <div class="quest-features">
+              <div class="feature-item">✨ 6 Unique Puzzles</div>
+              <div class="feature-item">💜 Hidden Messages</div>
+              <div class="feature-item">🎁 Special Reward</div>
+            </div>
+          </div>
+          <button id="startQuest" class="quest-btn start-btn">
+            <span class="btn-text">Begin the Quest</span>
+            <span class="btn-icon">🌹</span>
+          </button>
+        </div>
+        <div class="quest-puzzle hidden" id="puzzle1">
+          <div class="puzzle-header">
+            <div class="puzzle-number">Puzzle 1</div>
+            <h3 class="puzzle-title">The Flower Path</h3>
+            <p class="puzzle-description">Follow the path of our love story. Click the flowers in the order we met, fell in love, and promised forever.</p>
+          </div>
+          <div class="petal-puzzle">
+            <div class="quest-petal" data-order="1">
+              <span class="petal-emoji">🌸</span>
+              <span class="petal-label">First</span>
+            </div>
+            <div class="quest-petal" data-order="2">
+              <span class="petal-emoji">🌺</span>
+              <span class="petal-label">Second</span>
+            </div>
+            <div class="quest-petal" data-order="3">
+              <span class="petal-emoji">🌷</span>
+              <span class="petal-label">Third</span>
+            </div>
+            <div class="quest-petal" data-order="4">
+              <span class="petal-emoji">🌹</span>
+              <span class="petal-label">Fourth</span>
+            </div>
+            <div class="quest-petal" data-order="5">
+              <span class="petal-emoji">🌻</span>
+              <span class="petal-label">Fifth</span>
+            </div>
+          </div>
+          <div class="selected-order">
+            <p>Your selection: <span id="selectedOrder"></span></p>
+          </div>
+          <div class="quest-hint-box">
+            <span class="hint-icon">💡</span>
+            <p class="quest-hint">Hint: Think of our journey together - from first meeting to forever</p>
+          </div>
+        </div>
+        <div class="quest-puzzle hidden" id="puzzle2">
+          <div class="puzzle-header">
+            <div class="puzzle-number">Puzzle 2</div>
+            <h3 class="puzzle-title">The Love Cipher</h3>
+            <p class="puzzle-description">Decode this secret message using the words below. Each number represents a word position.</p>
+          </div>
+          <div class="cipher-display">
+            <div class="cipher-code">3 - 1 - 2 , &nbsp;&nbsp; 2 - 1 - 3 , &nbsp;&nbsp; 1 - 2 - 1</div>
+          </div>
+          <div class="cipher-words">
+            <div class="cipher-word" data-word="1">
+              <span class="word-number">1</span>
+              <span class="word-text">Love</span>
+            </div>
+            <div class="cipher-word" data-word="2">
+              <span class="word-number">2</span>
+              <span class="word-text">You</span>
+            </div>
+            <div class="cipher-word" data-word="3">
+              <span class="word-number">3</span>
+              <span class="word-text">Forever</span>
+            </div>
+          </div>
+          <div class="cipher-input-container">
+            <input type="text" id="cipherAnswer" placeholder="Type your decoded message here..." class="cipher-input">
+            <button id="checkCipher" class="quest-btn check-btn">
+              <span>Check Answer</span>
+            </button>
+          </div>
+          <div class="quest-hint-box">
+            <span class="hint-icon">💡</span>
+            <p class="quest-hint">Hint: Read the numbers in order, replacing each with its corresponding word</p>
+          </div>
+        </div>
+        <div class="quest-puzzle hidden" id="puzzle3">
+          <div class="puzzle-header">
+            <div class="puzzle-number">Puzzle 3</div>
+            <h3 class="puzzle-title">The Hidden Garden</h3>
+            <p class="puzzle-description">Search through our memory garden and find all the hidden treasures. Click on each object to collect it!</p>
+          </div>
+          <div class="library-scene">
+            <div class="scene-background"></div>
+            <div class="hidden-object" data-object="book" style="top: 15%; left: 20%;">
+              <span class="object-emoji">📖</span>
+              <span class="object-name">Book</span>
+            </div>
+            <div class="hidden-object" data-object="rose" style="top: 60%; left: 70%;">
+              <span class="object-emoji">🌹</span>
+              <span class="object-name">Rose</span>
+            </div>
+            <div class="hidden-object" data-object="heart" style="top: 30%; left: 50%;">
+              <span class="object-emoji">💜</span>
+              <span class="object-name">Heart</span>
+            </div>
+            <div class="hidden-object" data-object="key" style="top: 75%; left: 15%;">
+              <span class="object-emoji">🔑</span>
+              <span class="object-name">Key</span>
+            </div>
+            <div class="hidden-object" data-object="star" style="top: 45%; left: 80%;">
+              <span class="object-emoji">⭐</span>
+              <span class="object-name">Star</span>
+            </div>
+            <div class="hidden-object" data-object="ring" style="top: 20%; left: 75%;">
+              <span class="object-emoji">💍</span>
+              <span class="object-name">Ring</span>
+            </div>
+          </div>
+          <div class="objects-progress">
+            <div class="progress-icon">🔍</div>
+            <p class="quest-progress">Found: <span id="objectsFound">0</span> / 6 Objects</p>
+            <div class="progress-stars">
+              <span class="progress-star" data-star="1">⭐</span>
+              <span class="progress-star" data-star="2">⭐</span>
+              <span class="progress-star" data-star="3">⭐</span>
+              <span class="progress-star" data-star="4">⭐</span>
+              <span class="progress-star" data-star="5">⭐</span>
+              <span class="progress-star" data-star="6">⭐</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- New Puzzle 4: Memory Match -->
+        <div class="quest-puzzle hidden" id="puzzle4">
+          <div class="puzzle-header">
+            <div class="puzzle-number">Puzzle 4</div>
+            <h3 class="puzzle-title">Memory Match</h3>
+            <p class="puzzle-description">Match the pairs to reveal our special moments together. Find all matching pairs!</p>
+          </div>
+          <div class="memory-match-grid" id="memoryGrid">
+            <!-- Cards will be generated by JavaScript -->
+          </div>
+          <div class="match-progress">
+            <p>Matches Found: <span id="matchesFound">0</span> / 6</p>
+          </div>
+        </div>
+        
+        <!-- New Puzzle 5: Love Timeline -->
+        <div class="quest-puzzle hidden" id="puzzle5">
+          <div class="puzzle-header">
+            <div class="puzzle-number">Puzzle 5</div>
+            <h3 class="puzzle-title">Our Love Timeline</h3>
+            <p class="puzzle-description">Arrange these moments in chronological order - from our first meeting to forever.</p>
+          </div>
+          <div class="timeline-container">
+            <div class="timeline-items" id="timelineItems">
+              <div class="timeline-item" data-order="3">
+                <div class="timeline-icon">💍</div>
+                <div class="timeline-text">Forever Promise</div>
+              </div>
+              <div class="timeline-item" data-order="1">
+                <div class="timeline-icon">👀</div>
+                <div class="timeline-text">First Meeting</div>
+              </div>
+              <div class="timeline-item" data-order="4">
+                <div class="timeline-icon">💒</div>
+                <div class="timeline-text">Our Future</div>
+              </div>
+              <div class="timeline-item" data-order="2">
+                <div class="timeline-icon">💕</div>
+                <div class="timeline-text">Falling in Love</div>
+              </div>
+            </div>
+            <div class="timeline-dropzone" id="timelineDropzone">
+              <div class="dropzone-slot" data-slot="1"></div>
+              <div class="dropzone-slot" data-slot="2"></div>
+              <div class="dropzone-slot" data-slot="3"></div>
+              <div class="dropzone-slot" data-slot="4"></div>
+            </div>
+          </div>
+          <button id="checkTimeline" class="quest-btn check-btn hidden">Check Order</button>
+        </div>
+        
+        <!-- New Puzzle 6: Word Search -->
+        <div class="quest-puzzle hidden" id="puzzle6">
+          <div class="puzzle-header">
+            <div class="puzzle-number">Puzzle 6</div>
+            <h3 class="puzzle-title">Word Search of Love</h3>
+            <p class="puzzle-description">Find all the words that describe our love. Click and drag to select words!</p>
+          </div>
+          <div class="wordsearch-container">
+            <div class="wordsearch-grid" id="wordsearchGrid">
+              <!-- Grid will be generated by JavaScript -->
+            </div>
+            <div class="wordsearch-words">
+              <h4>Words to Find:</h4>
+              <div class="words-list" id="wordsList">
+                <span class="word-to-find" data-word="LOVE">LOVE</span>
+                <span class="word-to-find" data-word="FOREVER">FOREVER</span>
+                <span class="word-to-find" data-word="TOGETHER">TOGETHER</span>
+                <span class="word-to-find" data-word="HAPPINESS">HAPPINESS</span>
+              </div>
+            </div>
+          </div>
+          <div class="wordsearch-progress">
+            <p>Words Found: <span id="wordsFound">0</span> / 4</p>
+          </div>
+        </div>
+        <div class="quest-complete hidden" id="questComplete">
+          <div class="completion-celebration">
+            <div class="celebration-icon">🎉</div>
+            <h2 class="completion-title">Quest Complete!</h2>
+            <p class="completion-subtitle">You've proven your dedication, my love</p>
+          </div>
+          
+          <div id="finalGift" class="final-gift">
+            <div class="gift-container">
+              <p class="gift-instruction">Click the gift box to reveal your reward</p>
+              <div class="gift-box" id="giftBox">
+                <div class="gift-ribbon gift-ribbon-1"></div>
+                <div class="gift-ribbon gift-ribbon-2"></div>
+                <div class="gift-lid"></div>
+                <div class="gift-body">
+                  <div class="gift-sparkle sparkle-1">✨</div>
+                  <div class="gift-sparkle sparkle-2">✨</div>
+                  <div class="gift-sparkle sparkle-3">✨</div>
+                </div>
+              </div>
+              
+              <div class="gift-content hidden" id="giftContent">
+                <div class="gift-message-container">
+                  <div class="gift-rose">🌹</div>
+                  <h3 class="gift-title">My Eternal Promise</h3>
+                  <div class="gift-message">
+                    <p>My Dearest Sahana,</p>
+                    <p>You've journeyed through every challenge, solved every puzzle, and proven that our love is unbreakable.</p>
+                    <p>Just as you've unlocked this treasure, you've unlocked my heart completely and forever.</p>
+                    <p>This Purple Rose represents my eternal promise to you:</p>
+                    <p class="promise-text">I will love you in every lifetime, in every universe, in every moment that exists.</p>
+                    <p>You are not just my wife, you are my everything. My light, my home, my forever.</p>
+                    <p class="signature">Forever yours,<br>Your Husband (Monish Tijil) 💜</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="quest-stats">
+            <div class="stat-item">
+              <div class="stat-value" id="totalTime">0</div>
+              <div class="stat-label">Minutes</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="totalAttempts">0</div>
+              <div class="stat-label">Attempts</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">Completion</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sparkles -->
+  <div id="sparkles"></div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeQuest();
+      createSparkles();
+    });
+  </script>
+</body>
+</html>

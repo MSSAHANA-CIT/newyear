@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Love Letter - For My Everything</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="mainNav" class="main-nav">
+    <div class="nav-brand">For My Everything</div>
+    <div class="nav-links">
+      <a href="home.html" class="nav-btn">Home</a>
+      <a href="memory-garden.html" class="nav-btn">Memory Garden</a>
+      <a href="bouquet.html" class="nav-btn">Bouquet</a>
+      <a href="book.html" class="nav-btn">Book of Us</a>
+      <a href="library.html" class="nav-btn">Library</a>
+      <a href="constellations.html" class="nav-btn">Constellations</a>
+      <a href="map.html" class="nav-btn">Map</a>
+      <a href="quest.html" class="nav-btn">Quest</a>
+      <a href="ai-letter.html" class="nav-btn active">AI Letter</a>
+      <a href="vault.html" class="nav-btn">Vault</a>
+    </div>
+    <button id="nightModeToggle" class="night-toggle">🌙</button>
+  </nav>
+
+  <!-- AI Love Letter -->
+  <section id="ai-letter" class="section active">
+    <div class="ai-wrapper">
+      <!-- Question Box Sidebar -->
+      <div class="questions-sidebar">
+        <div class="questions-header">
+          <div class="questions-icon">💬</div>
+          <h3 class="questions-title">Ask Me Anything</h3>
+          <p class="questions-subtitle">Click any question to see my answer</p>
+        </div>
+        <div class="questions-list" id="questionsList">
+          <!-- Questions will be populated by JavaScript -->
+        </div>
+        <div class="questions-footer">
+          <div class="questions-count">
+            <span id="questionsCount">0</span> Questions Available
+          </div>
+        </div>
+      </div>
+
+      <!-- Main AI Terminal -->
+      <div class="ai-container">
+        <div class="ai-terminal">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <span class="btn red"></span>
+              <span class="btn yellow"></span>
+              <span class="btn green"></span>
+            </div>
+            <span class="terminal-title">💜 Love AI Assistant - MO (Monish Tijil)</span>
+          </div>
+          <div class="terminal-body" id="terminalBody">
+            <div class="terminal-line welcome-message">
+              <span class="prompt">AI></span>
+              <span class="text">Hello, My Everything. This is MO (Monish Tijil). How can I help you today? 💜</span>
+            </div>
+            <div class="terminal-line welcome-message">
+              <span class="prompt">AI></span>
+              <span class="text">You can ask me anything, or click on the questions in the sidebar for instant answers!</span>
+            </div>
+          </div>
+          <div class="terminal-input-area">
+            <span class="prompt">You></span>
+            <input type="text" id="aiInput" placeholder="Ask me anything... (e.g., 'why do you love me?')" autocomplete="off">
+            <button id="generateCompliment" class="ai-btn">
+              <span class="btn-icon">✨</span>
+              <span class="btn-text">Compliment</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Answer Popup Modal -->
+    <div class="answer-modal hidden" id="answerModal">
+      <div class="answer-modal-overlay"></div>
+      <div class="answer-modal-content">
+        <button class="answer-modal-close">×</button>
+        <div class="answer-header">
+          <div class="answer-icon">💜</div>
+          <h3 class="answer-question" id="answerQuestion"></h3>
+        </div>
+        <div class="answer-body">
+          <div class="answer-text" id="answerText"></div>
+          <div class="answer-signature">
+            <p>With all my love,</p>
+            <p class="signature-name">MO (Monish Tijil) 💜</p>
+          </div>
+        </div>
+        <div class="answer-footer">
+          <button class="answer-btn ask-again">Ask Another Question</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sparkles -->
+  <div id="sparkles"></div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeAI();
+      createSparkles();
+    });
+  </script>
+</body>
+</html>

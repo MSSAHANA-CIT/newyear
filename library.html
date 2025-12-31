@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secret Library - For My Everything</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="mainNav" class="main-nav">
+    <div class="nav-brand">For My Everything</div>
+    <div class="nav-links">
+      <a href="home.html" class="nav-btn">Home</a>
+      <a href="memory-garden.html" class="nav-btn">Memory Garden</a>
+      <a href="bouquet.html" class="nav-btn">Bouquet</a>
+      <a href="book.html" class="nav-btn">Book of Us</a>
+      <a href="library.html" class="nav-btn active">Library</a>
+      <a href="constellations.html" class="nav-btn">Constellations</a>
+      <a href="map.html" class="nav-btn">Map</a>
+      <a href="quest.html" class="nav-btn">Quest</a>
+      <a href="ai-letter.html" class="nav-btn">AI Letter</a>
+      <a href="vault.html" class="nav-btn">Vault</a>
+    </div>
+    <button id="nightModeToggle" class="night-toggle">🌙</button>
+  </nav>
+
+  <!-- Secret Library Portal -->
+  <section id="library" class="section active">
+    <div class="library-container">
+      <h1 class="library-title">The Secret Library</h1>
+      <p class="library-subtitle">For My Everything, My Sahana</p>
+      <div class="library-shelves">
+        <div class="shelf-row">
+          <div class="library-book" data-book="1">
+            <span>Chapter 1: The Day I Realized...</span>
+          </div>
+          <div class="library-book" data-book="2">
+            <span>Chapter 2: Your Smile</span>
+          </div>
+          <div class="library-book" data-book="3">
+            <span>Chapter 3: Quiet Moments</span>
+          </div>
+        </div>
+        <div class="shelf-row">
+          <div class="library-book" data-book="4">
+            <span>Chapter 4: Distance & Love</span>
+          </div>
+          <div class="library-book special-book" data-book="gift">
+            <span>🔒 The Forbidden Book</span>
+          </div>
+          <div class="library-book" data-book="5">
+            <span>Chapter 5: Forever</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="libraryModal" class="library-modal hidden">
+      <div class="library-modal-content">
+        <button class="close-modal">×</button>
+        <div id="libraryModalText"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sparkles -->
+  <div id="sparkles"></div>
+
+  <!-- Dust Particles -->
+  <div id="dust"></div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeLibrary();
+      createDust();
+      createSparkles();
+      currentSection = 'library';
+    });
+  </script>
+</body>
+</html>
